@@ -1,11 +1,11 @@
 <template>
   <div class="bg-white border border-stone-200">
-    <div class="flex items-start gap-5 p-7 border-b border-stone-100">
+    <div class="flex items-start gap-5 p-4 sm:p-7 border-b border-stone-100">
       <img
         v-if="profile.avatarUrl"
         :src="profile.avatarUrl"
         class="w-16 h-16 rounded-full object-cover border border-stone-200 shrink-0"
-        alt="Avatar"
+        :alt="profile.fullName + ' - ảnh đại diện'"
       />
       <div
         v-else
@@ -16,18 +16,18 @@
 
       <div class="flex-1 min-w-0 pt-1">
         <h2 class="text-lg font-light text-stone-900 leading-tight truncate">{{ profile.fullName }}</h2>
-        <p class="text-[11px] font-light tracking-wider text-stone-400 mt-1">@{{ profile.username }}</p>
+        <p class="text-[11px] font-light tracking-wider text-stone-500 mt-1">@{{ profile.username }}</p>
       </div>
 
       <NuxtLink
         to="/profile/edit"
-        class="shrink-0 text-[10px] font-medium tracking-[0.15em] uppercase text-stone-400 border border-stone-200 px-4 py-2 hover:border-primary-300 hover:text-primary-600 transition-colors"
+        class="shrink-0 text-[10px] font-medium tracking-[0.15em] uppercase text-stone-500 border border-stone-200 px-4 py-2 hover:border-primary-300 hover:text-primary-600 transition-colors"
       >
         Chỉnh sửa
       </NuxtLink>
     </div>
 
-    <div class="px-7 py-5 flex flex-col sm:flex-row gap-4">
+    <div class="px-4 sm:px-7 py-4 sm:py-5 flex flex-col sm:flex-row gap-4">
       <div class="flex items-center gap-2.5 text-sm font-light text-stone-600 min-w-0 overflow-hidden">
         <svg class="w-3.5 h-3.5 text-primary-200 shrink-0" fill="none" viewBox="0 0 16 16" stroke="currentColor" stroke-width="1.5">
           <path stroke-linecap="round" stroke-linejoin="round" d="M2 4l6 5 6-5M2 4h12v9H2V4z" />

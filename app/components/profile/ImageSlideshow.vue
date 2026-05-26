@@ -11,11 +11,12 @@
         class="absolute inset-0 w-full h-full object-cover transition-opacity duration-500"
         :class="idx === activeIndex ? 'opacity-100' : 'opacity-0'"
         :alt="`Ảnh ${idx + 1}`"
+        loading="lazy"
       />
 
       <button
         v-if="images.length > 1"
-        class="absolute left-3 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-black/60 text-white w-9 h-9 rounded-full flex items-center justify-center transition-colors"
+        class="absolute left-3 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-black/60 text-white w-11 h-11 rounded-full flex items-center justify-center transition-colors"
         aria-label="Ảnh trước"
         @click="prev"
       >
@@ -23,7 +24,7 @@
       </button>
       <button
         v-if="images.length > 1"
-        class="absolute right-3 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-black/60 text-white w-9 h-9 rounded-full flex items-center justify-center transition-colors"
+        class="absolute right-3 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-black/60 text-white w-11 h-11 rounded-full flex items-center justify-center transition-colors"
         aria-label="Ảnh tiếp theo"
         @click="next"
       >
@@ -45,7 +46,7 @@
   </div>
   <div v-else class="bg-white border border-stone-200 px-8 py-12 text-center">
     <p class="text-[11px] font-light tracking-widest text-stone-400 uppercase mb-3">Chưa có ảnh yêu thích</p>
-    <NuxtLink to="/profile/edit" class="text-[11px] font-medium tracking-wider text-primary-600 hover:text-primary-700 transition-colors uppercase">Thêm ảnh</NuxtLink>
+    <NuxtLink to="/profile/edit" class="text-[11px] font-medium tracking-wider text-primary-600 hover:text-primary-700 transition-colors uppercase">Thêm ảnh đầu tiên</NuxtLink>
   </div>
 </template>
 

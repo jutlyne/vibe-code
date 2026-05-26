@@ -33,7 +33,7 @@
       Đăng nhập
     </AppButton>
 
-    <p class="text-center text-[11px] font-light tracking-wide text-stone-400">
+    <p class="text-center text-[11px] font-light tracking-wide text-stone-500">
       Chưa có tài khoản?
       <NuxtLink to="/register" class="text-primary-600 hover:text-primary-700 transition-colors">Đăng ký ngay</NuxtLink>
     </p>
@@ -96,7 +96,7 @@ async function onSubmit() {
 
     await navigateTo('/profile')
   } catch (e: unknown) {
-    error.value = e instanceof Error ? e.message : 'Đăng nhập thất bại'
+    error.value = e instanceof Error ? e.message : 'Email hoặc mật khẩu không đúng. Vui lòng thử lại.'
   } finally {
     loading.value = false
   }

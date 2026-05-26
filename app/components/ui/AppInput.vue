@@ -14,7 +14,7 @@
         :autocomplete="autocomplete"
         :aria-invalid="error ? 'true' : undefined"
         :aria-describedby="error ? `${inputId}-error` : undefined"
-        class="w-full border text-sm font-light transition-colors focus:outline-none focus:ring-1 focus:ring-primary-500 focus:border-primary-400 disabled:bg-stone-50 disabled:cursor-not-allowed placeholder:text-stone-300"
+        class="w-full border text-base sm:text-sm font-light transition-colors focus:outline-none focus:ring-1 focus:ring-primary-500 focus:border-primary-400 disabled:bg-stone-50 disabled:cursor-not-allowed placeholder:text-stone-300"
         :class="[
           error ? 'border-red-300 bg-red-50' : 'border-stone-200 bg-white',
           showToggle ? 'pl-3 pr-10 py-2.5' : 'px-3 py-2.5'
@@ -26,6 +26,7 @@
         v-if="showToggle"
         type="button"
         tabindex="-1"
+        :aria-label="visible ? 'Ẩn mật khẩu' : 'Hiện mật khẩu'"
         class="absolute inset-y-0 right-0 flex items-center px-3 text-stone-300 hover:text-stone-600 transition-colors"
         @click="visible = !visible"
       >

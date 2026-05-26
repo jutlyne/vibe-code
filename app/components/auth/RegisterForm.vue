@@ -9,7 +9,7 @@
 
     <div class="flex flex-col items-center mb-3">
       <AvatarUpload v-model="avatarBase64" :user-name="values.fullName || 'U'" />
-      <p class="text-[10px] font-light tracking-wider text-stone-400 mt-2 uppercase">Ảnh đại diện (tuỳ chọn)</p>
+      <p class="text-[10px] font-light tracking-wider text-stone-500 mt-2 uppercase">Ảnh đại diện (tuỳ chọn)</p>
     </div>
 
     <AppInput
@@ -54,14 +54,14 @@
       v-model="values.confirmPassword"
       type="password"
       show-toggle
-      placeholder="Nhập lại mật khẩu"
+      placeholder="Nhập lại mật khẩu để xác nhận"
       :error="formErrors.confirmPassword"
       required
       autocomplete="new-password"
       @blur="handleBlur('confirmPassword')"
     />
     <AppInput
-      label="Số điện thoại"
+      label="Số điện thoại (tuỳ chọn)"
       v-model="values.phone"
       type="tel"
       placeholder="0901234567"
@@ -73,7 +73,7 @@
       Đăng ký
     </AppButton>
 
-    <p class="text-center text-[11px] font-light tracking-wide text-stone-400">
+    <p class="text-center text-[11px] font-light tracking-wide text-stone-500">
       Đã có tài khoản?
       <NuxtLink to="/login" class="text-primary-600 hover:text-primary-700 transition-colors">Đăng nhập</NuxtLink>
     </p>
@@ -178,7 +178,7 @@ async function onSubmit() {
 
     await navigateTo('/profile')
   } catch (e: unknown) {
-    error.value = e instanceof Error ? e.message : 'Đăng ký thất bại'
+    error.value = e instanceof Error ? e.message : 'Không thể tạo tài khoản. Email có thể đã được sử dụng.'
   } finally {
     loading.value = false
   }

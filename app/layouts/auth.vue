@@ -9,11 +9,11 @@
           Corporate 2
         </NuxtLink>
         <div class="mt-3 w-6 h-px bg-primary-600 mx-auto" />
-        <p class="mt-3 text-[11px] font-light tracking-wider text-stone-400">
+        <p class="mt-3 text-[11px] font-light tracking-wider text-stone-500">
           Quản lý tài khoản của bạn
         </p>
       </div>
-      <div class="bg-white border border-stone-200 p-10">
+      <div class="bg-white border border-stone-200 p-6 sm:p-10">
         <slot />
       </div>
     </div>

@@ -2,7 +2,7 @@
   <button
     :type="type"
     :disabled="disabled || loading"
-    class="inline-flex items-center justify-center gap-2 px-5 py-2.5 text-[11px] font-medium tracking-[0.15em] uppercase transition-colors focus:outline-none focus-visible:ring-1 focus-visible:ring-stone-400 focus-visible:ring-offset-1 disabled:opacity-40 disabled:cursor-not-allowed"
+    class="inline-flex items-center justify-center gap-2 px-5 py-2.5 text-[11px] font-medium tracking-[0.15em] uppercase transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-1 disabled:opacity-40 disabled:cursor-not-allowed"
     :class="variantClasses[variant]"
   >
     <svg

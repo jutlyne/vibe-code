@@ -9,26 +9,26 @@
           >
             Corporate 2
           </NuxtLink>
-          <div class="flex items-center gap-6">
+          <div class="flex items-center gap-3 sm:gap-6">
             <template v-if="authStore.isAuthenticated">
               <NuxtLink
                 to="/profile"
-                class="text-[11px] font-medium tracking-wider text-stone-500 hover:text-stone-900 transition-colors uppercase"
+                class="hidden sm:inline text-[11px] font-medium tracking-wider text-stone-500 hover:text-stone-900 transition-colors uppercase"
               >
                 Trang cá nhân
               </NuxtLink>
               <button
-                class="text-[11px] font-medium tracking-wider text-stone-400 hover:text-red-700 transition-colors uppercase"
+                class="text-[11px] font-medium tracking-wider text-stone-500 hover:text-red-700 transition-colors uppercase"
                 @click="handleLogout"
               >
                 Đăng xuất
               </button>
-              <NuxtLink to="/profile">
+              <NuxtLink to="/profile" class="flex items-center justify-center min-w-[44px] min-h-[44px]" aria-label="Trang cá nhân">
                 <img
                   v-if="authStore.user?.avatarUrl"
                   :src="authStore.user.avatarUrl"
                   class="w-7 h-7 rounded-full object-cover border border-stone-200"
-                  alt="avatar"
+                  :alt="(authStore.user?.fullName || '') + ' - ảnh đại diện'"
                 />
                 <div
                   v-else
@@ -41,7 +41,7 @@
             <template v-else>
               <NuxtLink
                 to="/login"
-                class="text-[11px] font-medium tracking-wider text-stone-500 hover:text-stone-900 transition-colors uppercase"
+                class="hidden sm:inline text-[11px] font-medium tracking-wider text-stone-500 hover:text-stone-900 transition-colors uppercase"
               >
                 Đăng nhập
               </NuxtLink>
@@ -62,7 +62,7 @@
     </main>
 
     <footer class="border-t border-stone-200 py-5 text-center">
-      <span class="text-[10px] font-light tracking-[0.2em] text-stone-400 uppercase">
+      <span class="text-[10px] font-light tracking-[0.2em] text-stone-500 uppercase">
         Corporate 2 &copy; {{ new Date().getFullYear() }}
       </span>
     </footer>

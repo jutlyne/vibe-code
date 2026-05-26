@@ -3,11 +3,11 @@
     <div class="flex items-center gap-4 mb-8">
       <NuxtLink
         to="/profile"
-        class="text-[11px] font-medium tracking-wider text-stone-400 hover:text-stone-700 transition-colors uppercase"
+        class="text-[11px] font-medium tracking-wider text-stone-500 hover:text-stone-700 transition-colors uppercase"
       >
-        ← Quay lại
+        <span aria-hidden="true">← </span>Quay lại
       </NuxtLink>
-      <span class="text-stone-200">|</span>
+      <span class="text-stone-200" aria-hidden="true">|</span>
       <h1 class="text-[11px] font-medium tracking-[0.2em] text-stone-800 uppercase">Chỉnh sửa tài khoản</h1>
     </div>
 
@@ -16,12 +16,12 @@
       <AppAlert :message="errorMsg" type="error" />
 
       <div class="bg-white border border-stone-200 p-7 space-y-5">
-        <h2 class="text-[10px] font-medium tracking-[0.2em] text-stone-400 uppercase">Ảnh đại diện</h2>
+        <h2 class="text-[10px] font-medium tracking-[0.2em] text-stone-500 uppercase">Ảnh đại diện</h2>
         <AvatarUpload v-model="formValues.avatarUrl" :user-name="formValues.fullName" />
       </div>
 
       <div class="bg-white border border-stone-200 p-7 space-y-5">
-        <h2 class="text-[10px] font-medium tracking-[0.2em] text-stone-400 uppercase">Thông tin cá nhân</h2>
+        <h2 class="text-[10px] font-medium tracking-[0.2em] text-stone-500 uppercase">Thông tin cá nhân</h2>
         <AppInput
           label="Họ và tên"
           v-model="formValues.fullName"
@@ -48,12 +48,12 @@
           <p class="text-sm font-light text-stone-500 bg-stone-50 border border-stone-100 px-3 py-2.5">
             {{ profile?.email }}
           </p>
-          <p class="text-[10px] font-light tracking-wide text-stone-400 mt-1">Email không thể thay đổi</p>
+          <p class="text-[10px] font-light tracking-wide text-stone-500 mt-1">Email không thể thay đổi</p>
         </div>
       </div>
 
       <div class="bg-white border border-stone-200 p-7 space-y-5">
-        <h2 class="text-[10px] font-medium tracking-[0.2em] text-stone-400 uppercase">Ảnh yêu thích</h2>
+        <h2 class="text-[10px] font-medium tracking-[0.2em] text-stone-500 uppercase">Ảnh yêu thích</h2>
         <GalleryUpload v-model="galleryImages" />
       </div>
 

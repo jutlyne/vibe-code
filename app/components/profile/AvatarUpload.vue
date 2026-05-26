@@ -1,14 +1,16 @@
 <template>
   <div class="flex flex-col items-center gap-3">
-    <div
+    <button
+      type="button"
       class="relative w-24 h-24 rounded-full cursor-pointer group"
+      aria-label="Tải ảnh đại diện lên"
       @click="triggerInput"
     >
       <img
         v-if="previewUrl"
         :src="previewUrl"
         class="w-24 h-24 rounded-full object-cover border border-stone-200"
-        alt="Avatar"
+        :alt="userName ? userName + ' - ảnh đại diện' : 'Ảnh đại diện'"
       />
       <div
         v-else
@@ -19,7 +21,7 @@
       <div class="absolute inset-0 rounded-full bg-stone-900/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
         <span class="text-white text-[10px] font-medium tracking-wider uppercase">Thay ảnh</span>
       </div>
-    </div>
+    </button>
     <input
       ref="inputRef"
       type="file"
